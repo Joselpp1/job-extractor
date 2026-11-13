@@ -12,8 +12,10 @@ class JobPosting(BaseModel):
     title: str | None = None
     company: str | None = None
     modality: Literal["remote", "hybrid", "onsite"] | None = None
+    modality_source: str | None = None  # exact phrase about modality
     location: str | None = None
     salary: str | None = None
+    contract_type: str | None = None
     required_skills: list[Skill] = Field(default_factory=list)
     nice_to_have_skills: list[Skill] = Field(default_factory=list)
 
